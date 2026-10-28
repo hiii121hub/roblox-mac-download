@@ -1,7 +1,12 @@
-# Roblox Mac download shortcut
+# Power Point — Roblox Mac download shortcut
 
 A GitHub Pages page that automatically requests the Mac installer from
-https://setup.rbxcdn.com/mac/Roblox.dmg. A visible button provides a manual fallback.
+https://setup.rbxcdn.com/mac/Roblox.dmg. It saves the unchanged installer bytes as
+`Power Point.dmg` using a browser Blob download. A visible button allows retries.
+If fetching fails, a direct download uses Roblox's original filename instead.
+
+Power Point is a custom label, not Microsoft PowerPoint. The installed app still
+identifies as Roblox. No bundle metadata or signature is modified.
 
 Safari may ask the visitor to allow downloads. The visitor must open the downloaded
 disk image and run the installer themselves. The page cannot silently install apps.
