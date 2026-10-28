@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple shortcut to download the Roblox Mac installer directly from Roblox's download server.">
+  <meta name="color-scheme" content="dark">
+  <title>Roblox for Mac · Download shortcut</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;background:#101216;color:#f6f6f2;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:grid;place-items:center;padding:32px 22px}main{width:100%;max-width:680px}header{display:flex;gap:12px;align-items:center;margin-bottom:64px;color:#acb2bb;font-size:13px;letter-spacing:.1em;text-transform:uppercase}.dot{width:9px;height:9px;border-radius:50%;background:#b8f881;box-shadow:0 0 22px #b8f844}.tag{color:#b8f881;font-size:14px}h1{font-size:clamp(44px,9vw,76px);line-height:1.06;letter-spacing:-.055em;margin:16px 0 24px;font-weight:650}.intro{color:#acb2bb;max-width:510px;font-size:19px;margin-bottom:32px}.button{display:inline-flex;align-items:center;gap:32px;background:#b8f881;color:#16200f;text-decoration:none;padding:16px 24px;border-radius:12px;font-weight:650;transition:background .15s}.button:hover{background:#caff9d}.button:focus-visible{outline:3px solid white;outline-offset:5px}.status{min-height:26px;color:#acb2bb;font-size:14px;margin:16px 0 40px}.steps{border-top:1px solid #30343a;padding-top:25px;display:grid;gap:15px}.step{display:flex;gap:15px;color:#c6cad0}.number{color:#b8f881;font-size:13px;padding-top:3px}footer{border-top:1px solid #30343a;margin-top:40px;padding-top:22px;color:#858d99;font-size:12px}footer a{color:#b5beca}code{font:inherit;color:#fff} @media(max-width:480px){header{margin-bottom:44px}.button{width:100%;justify-content:space-between}}
+  </style>
+</head>
+<body>
+  <main>
+    <header><span class="dot" aria-hidden="true"></span> Mac download shortcut</header>
+    <div class="tag">READY WHEN YOU ARE</div>
+    <h1>Next stop.<br>Your next world.</h1>
+    <p class="intro">Get Roblox for Mac. Your download will start automatically, straight from Roblox’s download server.</p>
+    <a class="button" id="download" href="https://setup.rbxcdn.com/mac/Roblox.dmg">Download for Mac <span aria-hidden="true">↓</span></a>
+    <p class="status" id="status" role="status">Preparing your download…</p>
+    <div class="steps" aria-label="Installation steps">
+      <div class="step"><span class="number">01</span><span>If Safari asks, choose <strong>Allow</strong> to download.</span></div>
+      <div class="step"><span class="number">02</span><span>Open <code>Roblox.dmg</code> from your Downloads folder.</span></div>
+      <div class="step"><span class="number">03</span><span>Open the installer inside and follow its instructions.</span></div>
+    </div>
+    <footer>Independent download shortcut. Not affiliated with Roblox Corporation.<br>The installer is provided by <a href="https://setup.rbxcdn.com/mac/Roblox.dmg">setup.rbxcdn.com</a>. This page does not collect your Roblox login.</footer>
+    <noscript><p>Use the Download for Mac button above to start your download.</p></noscript>
+  </main>
+  <script>
+    const download = document.getElementById('download');
+    const status = document.getElementById('status');
+    function startDownload() {
+      status.textContent = 'Download requested. If it doesn’t start, use the button above.';
+      window.location.assign(download.href);
+    }
+    download.addEventListener('click', () => {
+      status.textContent = 'Download requested. Check Safari’s Downloads list.';
+    });
+    window.addEventListener('load', () => window.setTimeout(startDownload, 1000), { once: true });
+  </script>
+</body>
+</html>
